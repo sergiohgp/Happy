@@ -40,6 +40,11 @@ export const Form = styled.form`
       padding-bottom: 24px;
     }
   }
+  .leaflet-container {
+    margin-bottom: 40px;
+    border: 1px solid #d3e2e5;
+    border-radius: 20px;
+  }
 `;
 
 export const ButtonSelect = styled.div`
@@ -53,12 +58,6 @@ export const ButtonSelect = styled.div`
     color: #5c8599;
     cursor: pointer;
 
-    .active {
-      background: #edfff6;
-      border: 1px solid #a1e9c5;
-      color: #37c77f;
-    }
-
     &:first-child {
       border-radius: 20px 0px 0px 20px;
     }
@@ -67,6 +66,18 @@ export const ButtonSelect = styled.div`
       border-radius: 0 20px 20px 0;
       border-left: 0;
     }
+  }
+
+  .activeYes {
+    background: #edfff6;
+    border: 1px solid #a1e9c5;
+    color: #37c77f;
+  }
+
+  .activeNo {
+    background: #fdf0f5;
+    border: 1px solid #ffbcd4;
+    color: #ff669d;
   }
 `;
 
@@ -115,14 +126,53 @@ export const InputBlock = styled.div`
     padding: 16px;
     line-height: 28px;
   }
+`;
 
-  button {
+export const ImageContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 16px;
+
+  .new-image {
     width: 100%;
-    height: 64px;
+    height: 96px;
     background: #f5f8fa;
     border: 1px dashed #96d2f0;
     border-radius: 20px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type='file'] {
+    visibility: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .previewContainer {
+    width: 100%;
+    border: 1px solid;
+  }
+
+  .xButton {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px 0 16px 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
